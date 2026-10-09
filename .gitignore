@@ -426,3 +426,8 @@ FodyWeavers.xsd
 
 # Official VS Code C# Dev Kit Extension exclusion
 #*.lscache
+
+# Local SQLite database created by the demo
+*.db
+*.db-shm
+*.db-wal
