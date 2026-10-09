@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Idempotent webhook receiver</title>
+  <meta name="description" content="Stripe, WhatsApp and form webhooks processed exactly once, even when they arrive twice, a worker dies halfway or a provider is down.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='10' fill='%232147C6'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial' font-weight='700' font-size='26' fill='white'%3E%C3%971%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Sans:wdth,wght@75..100,400..700&family=Martian+Mono:wdth,wght@75..112.5,400..600&display=swap">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">×1</span>
+      <div>
+        <h1 data-i18n="title"></h1>
+        <p class="lede" data-i18n="lede"></p>
+      </div>
+    </div>
+    <nav class="tools">
+      <div class="lang" role="group" data-i18n-aria="language">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="es">ES</button>
+      </div>
+      <button type="button" class="theme-toggle" id="theme-toggle"></button>
+      <a class="source" href="https://github.com/MateoVH/WebhookDemo" data-i18n="source"></a>
+    </nav>
+  </header>
+
+  <section class="thesis" id="thesis" aria-live="polite"></section>
+
+  <main class="board">
+    <aside class="panel scenarios" id="scenarios"></aside>
+
+    <section class="panel inbox">
+      <header class="panel-head">
+        <h2 class="label" data-i18n="inbox.title"></h2>
+        <p class="hint" data-i18n="inbox.hint"></p>
+      </header>
+      <div id="inbox"></div>
+    </section>
+
+    <section class="panel detail" id="detail"></section>
+  </main>
+
+  <section class="ledger">
+    <div class="panel" id="invoices"></div>
+    <div class="panel" id="outbox"></div>
+  </section>
+
+  <footer class="foot">
+    <p data-i18n="footer"></p>
+  </footer>
+
+  <div class="notice" id="notice" role="status" aria-live="polite"></div>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
